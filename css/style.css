@@ -612,7 +612,7 @@ button[type="submit"].search__button:hover {
   display: block;
   width: 80%;
   height: 70%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 .carousel-shop__item-title {
