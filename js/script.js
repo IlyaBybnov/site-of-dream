@@ -1,6 +1,71 @@
 jQuery(function($){
     "use strict";
 
+    $('.testimonials__body-text').liTextLength({
+      length: 140,        //Видимое кол-во символов
+      afterLength: '...', //Текст после видимого содержания   
+      fullText:true,      //Добавить ссылку для отображения скрытого текста
+      moreText: '<br>Read more!',  //Текст ссылки до показа скрытого содержания
+      lessText: '<br>Hidden'   //Текст ссылки после показа скрытого содержания
+    });
+    $('.testimonials__body-description').liTextLength({
+      length: 550,        //Видимое кол-во символов
+      afterLength: '...', //Текст после видимого содержания   
+      fullText:true,      //Добавить ссылку для отображения скрытого текста
+      moreText: '<br>Read more!',  //Текст ссылки до показа скрытого содержания
+      lessText: '<br>Hidden'   //Текст ссылки после показа скрытого содержания
+    });
+
+
+    let sections = $('section'), 
+    nav = $('.header__nav'), 
+    nav_height = nav.outerHeight();
+    $(window).on('scroll', function () {
+        $('.header__menu-link').removeClass('active');
+        $('.header__burger').removeClass('active');
+        $('.header__nav').removeClass('active');
+        $('body').removeClass('lock');
+        let cur_pos = $(this).scrollTop(); 
+        sections.each(function() {
+            let top = $(this).offset().top - nav_height - 100,
+            bottom = top + $(this).outerHeight();       
+            if (cur_pos >= top && cur_pos <= bottom) {
+                nav.find('.header__menu-link').removeClass('active');
+                sections.removeClass('active');    
+                $(this).addClass('active');
+                nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+            }
+        });
+    });
+    nav.find('a').on('click', function () {
+        let $el = $(this), 
+        id = $el.attr('href'); 
+        $('html, body').animate({
+            scrollTop: $(id).offset().top - nav_height
+        }, 600);
+        return false;
+    });
+
+
+    $('.testimonials__body-images').magnificPopup({
+      delegate: 'a',
+      type: 'image',
+      tLoading: 'Loading image #%curr%...',
+      mainClass: 'mfp-img-mobile',
+      gallery: {
+        enabled: true,
+        navigateByImgClick: true,
+        preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+      },
+      image: {
+        tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+        titleSrc: function(item) {
+          return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+        }
+      }
+    });
+
+
     $('.header__burger').click(function(event){
         $('.header__burger, .header__nav').toggleClass('active');
         $('body').toggleClass('lock');
