@@ -152,6 +152,8 @@
 }
 .main-logo__image {
   width: 153px;
+  height: 47px;
+  object-fit: contain;
 }
 .basket__icon {
   margin-right: 5px;
@@ -428,6 +430,7 @@ button[type="submit"].search__button:hover {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  padding: 5px;
 }
 .video-box__link {
   color: #ffffff;
@@ -477,6 +480,7 @@ button[type="submit"].search__button:hover {
   font-family: 'PT Serif', serif;
   display: flex;
   align-items: center;
+  padding: 5px;
 }
 .author-box__quote {
   position: absolute;
@@ -641,6 +645,8 @@ button[type="submit"].search__button:hover {
   border-right: 1px solid #f8f4f3;
   border-left: 1px solid #f8f4f3;
   padding: 0 5px;
+  height: 38px;
+  overflow: hidden;
 }
 .carousel-shop__item-btn {
   padding: 0 5px;
@@ -733,6 +739,8 @@ button[type="submit"].search__button:hover {
   color: #ff742b;
   font-size: 63px;
   margin-bottom: 29px;
+  display: block;
+  text-decoration: none;
 }
 .blog__form-label {
   color: #ff742b;
@@ -776,6 +784,7 @@ button[type="submit"].search__button:hover {
 }
 .blog-article:last-child {
   border-bottom: none;
+  padding-bottom: 0px;
 }
 .blog-article__image {
   width: 190px;
@@ -854,9 +863,7 @@ button[type="submit"].search__button:hover {
   font-size: 22px;
   line-height: 30px;
   font-style: italic;
-  max-height: 60px;
-  height: 100%;
-  overflow: hidden;
+  min-height: 92px;
 }
 .testimonials__body-images {
   padding: 32px 0;
@@ -864,9 +871,13 @@ button[type="submit"].search__button:hover {
   display: flex;
   flex-wrap: nowrap;
 }
-.testimonials__body-images img {
+.testimonials__body-images-link {
   height: 120px;
   width: 25%;
+}
+.testimonials__body-images-link img {
+  height: 100%;
+  width: 100%;
   object-fit: cover;
   overflow: hidden;
 }
@@ -876,9 +887,7 @@ button[type="submit"].search__button:hover {
   font-size: 13px;
   line-height: 24px;
   font-weight: 400;
-  height: 120px;
-  max-height: 120px;
-  overflow: hidden;
+  min-height: 168px;
 }
 .testimonials__authors {
   width: 100%;
@@ -973,7 +982,7 @@ button[type="submit"].search__button:hover {
 .authors-item__foto img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 .authors-item__name {
   font-family: 'PT Serif', serif;
@@ -1214,6 +1223,7 @@ button[type="submit"].search__button:hover {
   font-weight: 700;
   color: #5ad2ff;
   margin-right: 5px;
+  display: block;
 }
 .twits__info-time {
   font-weight: 400;
@@ -1543,7 +1553,6 @@ body.touch .carousel-shop__item:hover .carousel-shop__item-image {
   }
   .blok-info__author {
     width: 480px;
-    height: 349px;
   }
   .video-box__images {
     height: auto;
@@ -1609,6 +1618,9 @@ body.touch .carousel-shop__item:hover .carousel-shop__item-image {
   }
   .carousel__nav {
     height: 70px;
+  }
+  .carousel__nav-title {
+    font-size: 34px;
   }
   .carousel-shop__item-btn {
     height: 60px;
@@ -1695,7 +1707,7 @@ body.touch .carousel-shop__item:hover .carousel-shop__item-image {
     justify-content: center;
     padding: 5px 0;
   }
-  .testimonials__body-images img {
+  .testimonials__body-images-link {
     height: 120px;
     width: 172px;
     margin: 5px;
@@ -1783,14 +1795,10 @@ body.touch .carousel-shop__item:hover .carousel-shop__item-image {
   }
   .blok-info__author {
     width: 90%;
-    height: 349px;
   }
   .author-box__body {
     width: 278px;
     padding-left: 3%;
-  }
-  .carousel__nav-title {
-    font-size: 36px;
   }
   .blog-testimonials__testimonials {
     padding-top: 25px;
@@ -1895,7 +1903,7 @@ body.touch .carousel-shop__item:hover .carousel-shop__item-image {
     font-size: 12px;
   }
   .carousel__nav-title {
-    font-size: 30px;
+    font-size: 26px;
   }
   .carousel__nav-arrow {
     flex-shrink: 0;
@@ -1934,10 +1942,10 @@ body.touch .carousel-shop__item:hover .carousel-shop__item-image {
   .testimonials__body {
     padding-bottom: 15px;
   }
-  .testimonials__body-images img {
+  .testimonials__body-images-link {
     margin: 5px;
   }
-  .testimonials__body-images img {
+  .testimonials__body-images-link {
     max-height: 111px;
     max-width: 160px;
   }
@@ -1955,7 +1963,7 @@ body.touch .carousel-shop__item:hover .carousel-shop__item-image {
   .carousel__nav-title {
     display: none;
   }
-  .testimonials__body-images img {
+  .testimonials__body-images-link {
     margin: 1px;
   }
 }
@@ -1987,7 +1995,7 @@ body.touch .carousel-shop__item:hover .carousel-shop__item-image {
     font-size: 16px;
     line-height: 20px;
   }
-  .testimonials__body-images img {
+  .testimonials__body-images-link {
     max-height: 103px;
     max-width: 149px;
     margin: 0px;
